@@ -243,7 +243,8 @@ def make_regions(del_file_name):
     (condition, item#, region_indeces)
     '''
     with open(del_file_name) as del_file:
-        split_lines = [line.strip().split(' ') for line in del_file]
+        nonempty_lines = filter(None, map(str.strip, del_file))
+        split_lines = list(map(str.split, nonempty_lines))
     for line in split_lines:
         # convert item information to strings for later writing
         item_info = (str(line[0]), str(line[1]))
