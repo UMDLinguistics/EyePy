@@ -8,7 +8,7 @@ that can be imported into R for running stats.
 # Last updated: 04/01/14
 # Major revisions by Ilia Kurenkov in Spring/Summer of 2014
 # For a record of activity, see this link:
-# https://github.com/UMDLinguistics/EyeTrackAnalysis.git
+# https://github.com/UMDLinguistics/EyePy
 
 # This file is structured in the following way:
 # 1. Imports
@@ -21,9 +21,9 @@ that can be imported into R for running stats.
 #   6.2 Dealing with fixations
 
 
-###########################################################
+###########
 ## Imports
-###########################################################
+###########
 
 # import iteration functions such as chain, repeat, cycle
 # c.f. https://docs.python.org/2/library/itertools.html
@@ -35,9 +35,9 @@ from util import *
 from eye_measures import *
 
 
-###########################################################
+#####################
 ## The main function
-###########################################################
+#####################
 
 def main():
     # define list of questions to be asked of user when they run the file
@@ -122,9 +122,9 @@ def main():
         header=exclusion_table_header)
 
 
-###########################################################
+#############################
 ## Interacting with the user
-###########################################################
+#############################
 
 CUTOFF_PROMPT = ('The current cutoff settings are as follows.',
     'low: {0} ms',
@@ -159,9 +159,9 @@ def verify_cutoff_values(low_cutoff, high_cutoff, prompt=CUTOFF_PROMPT):
     return (low_cutoff, high_cutoff)
 
 
-###########################################################
+######################################################
 ## Creating fixation and question tables for subjects
-###########################################################
+######################################################
 
 def create_subj_tables(sentence_dir, question_dir):
     '''Given folder names for sentences and questions returns a list of
@@ -214,9 +214,9 @@ def load_subj_tables(directory, table_type):
     return dict(zip(subj_numbers, tables))
 
 
-###########################################################
+##############################
 ## Making/Loading a .reg file
-###########################################################
+##############################
 
 def get_region_table(file_name):
     '''Given a file name returns a region table.
@@ -295,9 +295,9 @@ def get_region_indices(sentences):
     return (str(number_of_regions),) + tuple(string_indices)
 
 
-###########################################################
+##########################
 ## Per/Subject operations
-###########################################################
+##########################
 
 def process_subj(subjects, table_of_regions, answer_key, cutoffs):
     '''This function takes a subject number with corresponding fixation and
@@ -385,9 +385,9 @@ def question_info(sentence_table, question_table, answer_key):
             yield ('NA', 'NA')
 
 
-###########################################################
+##########################
 ## Dealing with fixations
-###########################################################
+##########################
 
 def filter_fixations(cutoffs, trials):
     '''Given the cutoffs and a sequence of trials generates a sequence of

@@ -8,9 +8,9 @@ in turn is read in by generate_R_table.py and turned into a .reg (region) file.
 # import everything from the utilities library
 from util import *
 
-###########################################################
+########
 ## Main
-###########################################################
+########
 
 def main():
 	'''Bringing it all together:
